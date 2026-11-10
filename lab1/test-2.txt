@@ -1,0 +1,100 @@
+# line that start with character # is a comment, ignore it in parsing
+# each line should contain one input in format: id prio first T C D
+# i.e.: input-name priority first-occurrence-in-ms period comp-time relative-deadline
+#
+# A2: jedan periodicki ulaz, los: D < C < T (D se prekoracuje, ali se obavlja prije T)
+#id	prio	first	T	C	D
+inp-1	1	0	100	70	50
+
+# ===== rezultat simulacije =====
+# [000:000000 INPUTSIM] Input simulator ready
+# [000:000000 INPUTSIM] Input simulator starting
+# [000:000004 INPUTSIM] Activating input inp-1 req 1, deadline at 50 ms
+# [000:072052 INPUTSIM] Input inp-1 got late response (71 ms)
+# [000:100867 INPUTSIM] Activating input inp-1 req 2, deadline at 150 ms
+# [000:172965 INPUTSIM] Input inp-1 got late response (71 ms)
+# [000:200646 INPUTSIM] Activating input inp-1 req 3, deadline at 250 ms
+# [000:271294 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:301067 INPUTSIM] Activating input inp-1 req 4, deadline at 350 ms
+# [000:372725 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:400261 INPUTSIM] Activating input inp-1 req 5, deadline at 450 ms
+# [000:470807 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:500535 INPUTSIM] Activating input inp-1 req 6, deadline at 550 ms
+# [000:571673 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:600359 INPUTSIM] Activating input inp-1 req 7, deadline at 650 ms
+# [000:672387 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:700231 INPUTSIM] Activating input inp-1 req 8, deadline at 750 ms
+# [000:770960 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:800860 INPUTSIM] Activating input inp-1 req 9, deadline at 850 ms
+# [000:871616 INPUTSIM] Input inp-1 got late response (70 ms)
+# [000:900171 INPUTSIM] Activating input inp-1 req 10, deadline at 950 ms
+# [000:971693 INPUTSIM] Input inp-1 got late response (70 ms)
+# [001:000230 INPUTSIM] Activating input inp-1 req 11, deadline at 1050 ms
+# [001:071845 INPUTSIM] Input inp-1 got late response (70 ms)
+# [001:100612 INPUTSIM] Activating input inp-1 req 12, deadline at 1150 ms
+# [001:171804 INPUTSIM] Input inp-1 got late response (70 ms)
+# [001:200529 INPUTSIM] Activating input inp-1 req 13, deadline at 1250 ms
+# [001:271043 INPUTSIM] Input inp-1 got late response (70 ms)
+# [001:300822 INPUTSIM] Activating input inp-1 req 14, deadline at 1350 ms
+# [001:372918 INPUTSIM] Input inp-1 got late response (71 ms)
+# [001:400602 INPUTSIM] Activating input inp-1 req 15, deadline at 1450 ms
+# [001:411640 INPUTSIM] Input inp-1: in the [000:000000 CONTROLLER] Controller ready
+# [000:000000 CONTROLLER] Controller starting
+# [000:001078 CONTROLLER] START processing input inp-1 request 1 (C=70 ms)
+# [000:071194 CONTROLLER] END processing input inp-1 request 1
+# [000:101938 CONTROLLER] START processing input inp-1 request 2 (C=70 ms)
+# [000:172051 CONTROLLER] END processing input inp-1 request 2
+# [000:200786 CONTROLLER] START processing input inp-1 request 3 (C=70 ms)
+# [000:270906 CONTROLLER] END processing input inp-1 request 3
+# [000:301706 CONTROLLER] START processing input inp-1 request 4 (C=70 ms)
+# [000:371825 CONTROLLER] END processing input inp-1 request 4
+# [000:400339 CONTROLLER] START processing input inp-1 request 5 (C=70 ms)
+# [000:470462 CONTROLLER] END processing input inp-1 request 5
+# [000:501218 CONTROLLER] START processing input inp-1 request 6 (C=70 ms)
+# [000:571371 CONTROLLER] END processing input inp-1 request 6
+# [000:601255 CONTROLLER] START processing input inp-1 request 7 (C=70 ms)
+# [000:671364 CONTROLLER] END processing input inp-1 request 7
+# [000:700535 CONTROLLER] START processing input inp-1 request 8 (C=70 ms)
+# [000:770613 CONTROLLER] END processing input inp-1 request 8
+# [000:801349 CONTROLLER] START processing input inp-1 request 9 (C=70 ms)
+# [000:871431 CONTROLLER] END processing input inp-1 request 9
+# [000:901077 CONTROLLER] START processing input inp-1 request 10 (C=70 ms)
+# [000:971186 CONTROLLER] END processing input inp-1 request 10
+# [001:001172 CONTROLLER] START processing input inp-1 request 11 (C=70 ms)
+# [001:071289 CONTROLLER] END processing input inp-1 request 11
+# [001:101006 CONTROLLER] START processing input inp-1 request 12 (C=70 ms)
+# [001:171124 CONTROLLER] END processing input inp-1 request 12
+# [001:200895 CONTROLLER] START processing input inp-1 request 13 (C=70 ms)
+# [001:271012 CONTROLLER] END processing input inp-1 request 13
+# [001:301832 CONTROLLER] START processing input inp-1 request 14 (C=70 ms)
+# [001:371947 CONTROLLER] END processing input inp-1 request 14
+# [001:400771 CONTROLLER] START processing input inp-1 request 15 (C=70 ms)
+# [001:470884 CONTROLLER] END processing input inp-1 request 15
+# [001:499457 CONTROLLER] SIGINT: ending simulation
+# [001:499466 CONTROLLER] Controller ending
+# works
+# [001:471496 INPUTSIM] Input inp-1 got late response (70 ms)
+# 
+# Input inp-1 (t0=0, T=100, C=70, D=50):
+# nr_wakeups=15
+# nr_OK_responses=0
+# nr_LATE_responses=15
+# nr_NO_responses=0
+# response_avg=70
+# response_min=70
+# response_max=71
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Overall stats:
+# nr_wakeups=15
+# nr_OK_responses=0
+# nr_LATE_responses=15
+# nr_NO_responses=0
+# response_avg=70
+# response_min=70
+# response_max=71
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0

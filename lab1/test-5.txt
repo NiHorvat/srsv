@@ -1,0 +1,161 @@
+# line that start with character # is a comment, ignore it in parsing
+# each line should contain one input in format: id prio first T C D
+# i.e.: input-name priority first-occurrence-in-ms period comp-time relative-deadline
+#
+# B5: vise zadataka, neki ne stignu do D, ali svi prije T
+# (U = 0.6, svi se javljaju u t=0; obrade zavrsavaju u 40, 80, 120 < T=200)
+#id	prio	first	T	C	D
+inp-1	1	0	200	40	50
+inp-2	1	0	200	40	60
+inp-3	1	0	200	40	150
+
+# ===== rezultat simulacije =====
+# [000:000000 INPUTSIM] Input simulator ready
+# [000:000000 INPUTSIM] Input simulator starting
+# [000:000010 INPUTSIM] Activating input inp-1 req 1, deadline at 50 ms
+# [000:000012 INPUTSIM] Activating input inp-2 req 1, deadline at 60 ms
+# [000:000013 INPUTSIM] Activating input inp-3 req 1, deadline at 150 ms
+# [000:042233 INPUTSIM] Input inp-1 got response on time (41 ms)
+# [000:081475 INPUTSIM] Input inp-2 got late response (81 ms)
+# [000:122300 INPUTSIM] Input inp-3 got response on time (121 ms)
+# [000:200941 INPUTSIM] Activating input inp-1 req 2, deadline at 250 ms
+# [000:200948 INPUTSIM] Activating input inp-2 req 2, deadline at 260 ms
+# [000:200949 INPUTSIM] Activating input inp-3 req 2, deadline at 350 ms
+# [000:243043 INPUTSIM] Input inp-1 got response on time (41 ms)
+# [000:283027 INPUTSIM] Input inp-2 got late response (81 ms)
+# [000:322857 INPUTSIM] Input inp-3 got response on time (121 ms)
+# [000:400660 INPUTSIM] Activating input inp-1 req 3, deadline at 450 ms
+# [000:400664 INPUTSIM] Activating input inp-2 req 3, deadline at 460 ms
+# [000:400664 INPUTSIM] Activating input inp-3 req 3, deadline at 550 ms
+# [000:441367 INPUTSIM] Input inp-1 got response on time (40 ms)
+# [000:481205 INPUTSIM] Input inp-2 got late response (80 ms)
+# [000:522125 INPUTSIM] Input inp-3 got response on time (120 ms)
+# [000:600398 INPUTSIM] Activating input inp-1 req 4, deadline at 650 ms
+# [000:600406 INPUTSIM] Activating input inp-2 req 4, deadline at 660 ms
+# [000:600443 INPUTSIM] Activating input inp-3 req 4, deadline at 750 ms
+# [000:641561 INPUTSIM] Input inp-1 got response on time (40 ms)
+# [000:681753 INPUTSIM] Input inp-2 got late response (80 ms)
+# [000:721801 INPUTSIM] Input inp-3 got response on time (120 ms)
+# [000:800439 INPUTSIM] Activating input inp-1 req 5, deadline at 850 ms
+# [000:800449 INPUTSIM] Activating input inp-2 req 5, deadline at 860 ms
+# [000:800450 INPUTSIM] Activating input inp-3 req 5, deadline at 950 ms
+# [000:842646 INPUTSIM] Input inp-1 got response on time (41 ms)
+# [000:881774 INPUTSIM] Input inp-2 got late response (81 ms)
+# [000:922440 INPUTSIM] Input inp-3 got response on time (121 ms)
+# [001:000901 INPUTSIM] Activating input inp-1 req 6, deadline at 1050 ms
+# [001:000908 INPUTSIM] Activating input inp-2 req 6, deadline at 1060 ms
+# [001:000909 INPUTSIM] Activating input inp-3 req 6, deadline at 1150 ms
+# [001:042103 INPUTSIM] Input inp-1 got response on time (40 ms)
+# [001:082327 INPUTSIM] Input inp-2 got late response (80 ms)
+# [001:122070 INPUTSIM] Input inp-3 got response on time (120 ms)
+# [001:200833 INPUTSIM] Activating input inp-1 req 7, deadline at 1250 ms
+# [001:200841 INPUTSIM] Activating input inp-2 req 7, deadline at 1260 ms
+# [001:200842 INPUTSIM] Activating input inp-3 req 7, deadline at 1350 ms
+# [001:242923 INPUTSIM] Input inp-1 got response on time (41 ms)
+# [001:283035 INPUTSIM] Input inp-2 got late response (81 ms)
+# [001:322710 INPUTSIM] Input inp-3 got response on time (121 ms)
+# [001:400740 INPUTSIM] Activating input inp-1 req 8, deadline at 1450 ms
+# [001:400746 INPUTSIM] Activating input inp-2 req 8, deadline at 1460 ms
+# [001:400747 INPUTSIM] Activating input inp-3 req 8, deadline at 1550 ms
+# [001:442808 INPUTSIM] Input inp-1 got response on time (41 ms)
+# [001:446526 INPUTSIM] Inpu[000:000000 CONTROLLER] Controller ready
+# [000:000000 CONTROLLER] Controller starting
+# [000:001101 CONTROLLER] START processing input inp-1 request 1 (C=40 ms)
+# [000:041220 CONTROLLER] END processing input inp-1 request 1
+# [000:041225 CONTROLLER] START processing input inp-2 request 1 (C=40 ms)
+# [000:081304 CONTROLLER] END processing input inp-2 request 1
+# [000:081308 CONTROLLER] START processing input inp-3 request 1 (C=40 ms)
+# [000:121415 CONTROLLER] END processing input inp-3 request 1
+# [000:202113 CONTROLLER] START processing input inp-1 request 2 (C=40 ms)
+# [000:242231 CONTROLLER] END processing input inp-1 request 2
+# [000:242236 CONTROLLER] START processing input inp-2 request 2 (C=40 ms)
+# [000:282339 CONTROLLER] END processing input inp-2 request 2
+# [000:282343 CONTROLLER] START processing input inp-3 request 2 (C=40 ms)
+# [000:322457 CONTROLLER] END processing input inp-3 request 2
+# [000:400919 CONTROLLER] START processing input inp-1 request 3 (C=40 ms)
+# [000:441030 CONTROLLER] END processing input inp-1 request 3
+# [000:441034 CONTROLLER] START processing input inp-2 request 3 (C=40 ms)
+# [000:481145 CONTROLLER] END processing input inp-2 request 3
+# [000:481150 CONTROLLER] START processing input inp-3 request 3 (C=40 ms)
+# [000:521225 CONTROLLER] END processing input inp-3 request 3
+# [000:600726 CONTROLLER] START processing input inp-1 request 4 (C=40 ms)
+# [000:640833 CONTROLLER] END processing input inp-1 request 4
+# [000:640837 CONTROLLER] START processing input inp-2 request 4 (C=40 ms)
+# [000:680946 CONTROLLER] END processing input inp-2 request 4
+# [000:680951 CONTROLLER] START processing input inp-3 request 4 (C=40 ms)
+# [000:721031 CONTROLLER] END processing input inp-3 request 4
+# [000:801527 CONTROLLER] START processing input inp-1 request 5 (C=40 ms)
+# [000:841658 CONTROLLER] END processing input inp-1 request 5
+# [000:841664 CONTROLLER] START processing input inp-2 request 5 (C=40 ms)
+# [000:881772 CONTROLLER] END processing input inp-2 request 5
+# [000:881777 CONTROLLER] START processing input inp-3 request 5 (C=40 ms)
+# [000:921885 CONTROLLER] END processing input inp-3 request 5
+# [001:001292 CONTROLLER] START processing input inp-1 request 6 (C=40 ms)
+# [001:041360 CONTROLLER] END processing input inp-1 request 6
+# [001:041365 CONTROLLER] START processing input inp-2 request 6 (C=40 ms)
+# [001:081475 CONTROLLER] END processing input inp-2 request 6
+# [001:081480 CONTROLLER] START processing input inp-3 request 6 (C=40 ms)
+# [001:121545 CONTROLLER] END processing input inp-3 request 6
+# [001:201821 CONTROLLER] START processing input inp-1 request 7 (C=40 ms)
+# [001:241941 CONTROLLER] END processing input inp-1 request 7
+# [001:241945 CONTROLLER] START processing input inp-2 request 7 (C=40 ms)
+# [001:282054 CONTROLLER] END processing input inp-2 request 7
+# [001:282058 CONTROLLER] START processing input inp-3 request 7 (C=40 ms)
+# [001:322170 CONTROLLER] END processing input inp-3 request 7
+# [001:401809 CONTROLLER] START processing input inp-1 request 8 (C=40 ms)
+# [001:441883 CONTROLLER] END processing input inp-1 request 8
+# [001:441887 CONTROLLER] START processing input inp-2 request 8 (C=40 ms)
+# [001:481990 CONTROLLER] END processing input inp-2 request 8
+# [001:481997 CONTROLLER] START processing input inp-3 request 8 (C=40 ms)
+# [001:499393 CONTROLLER] SIGINT: ending simulation
+# [001:499403 CONTROLLER] END processing input inp-3 request 8
+# [001:499404 CONTROLLER] Controller ending
+# [001:482917 INPUTSIM] Input inp-2 got late response (81 ms)
+# 
+# Input inp-1 (t0=0, T=200, C=40, D=50):
+# nr_wakeups=8
+# nr_OK_responses=8
+# nr_LATE_responses=0
+# nr_NO_responses=0
+# response_avg=40
+# response_min=40
+# response_max=41
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Input inp-2 (t0=0, T=200, C=40, D=60):
+# nr_wakeups=8
+# nr_OK_responses=0
+# nr_LATE_responses=8
+# nr_NO_responses=0
+# response_avg=80
+# response_min=80
+# response_max=81
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Input inp-3 (t0=0, T=200, C=40, D=150):
+# nr_wakeups=8
+# nr_OK_responses=7
+# nr_LATE_responses=0
+# nr_NO_responses=0
+# response_avg=120
+# response_min=120
+# response_max=121
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Overall stats:
+# nr_wakeups=24
+# nr_OK_responses=15
+# nr_LATE_responses=8
+# nr_NO_responses=0
+# response_avg=78
+# response_min=40
+# response_max=121
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0

@@ -1,0 +1,77 @@
+# line that start with character # is a comment, ignore it in parsing
+# each line should contain one input in format: id prio first T C D
+# i.e.: input-name priority first-occurrence-in-ms period comp-time relative-deadline
+#
+# A3: jedan periodicki ulaz, jako los: D < T < C (bar svaki drugi nece stici)
+#id	prio	first	T	C	D
+inp-1	1	0	100	150	80
+
+# ===== rezultat simulacije =====
+# [000:000000 INPUTSIM] Input simulator ready
+# [000:000000 INPUTSIM] Input simulator starting
+# [000:000005 INPUTSIM] Activating input inp-1 req 1, deadline at 80 ms
+# [000:100308 INPUTSIM] Input inp-1: no response for req 1 within period
+# [000:151205 INPUTSIM] Input inp-1 got late response (151 ms)
+# [000:200706 INPUTSIM] Activating input inp-1 req 2, deadline at 280 ms
+# [000:300962 INPUTSIM] Input inp-1: no response for req 2 within period
+# [000:351135 INPUTSIM] Input inp-1 got late response (150 ms)
+# [000:401078 INPUTSIM] Activating input inp-1 req 3, deadline at 480 ms
+# [000:500608 INPUTSIM] Input inp-1: no response for req 3 within period
+# [000:551593 INPUTSIM] Input inp-1 got late response (150 ms)
+# [000:600324 INPUTSIM] Activating input inp-1 req 4, deadline at 680 ms
+# [000:700458 INPUTSIM] Input inp-1: no response for req 4 within period
+# [000:752038 INPUTSIM] Input inp-1 got late response (150 ms)
+# [000:800906 INPUTSIM] Activating input inp-1 req 5, deadline at 880 ms
+# [000:900614 INPUTSIM] Input inp-1: no response for req 5 within period
+# [000:952164 INPUTSIM] Input inp-1 got late response (151 ms)
+# [001:000617 INPUTSIM] Activating input inp-1 req 6, deadline at 1080 ms
+# [001:101099 INPUTSIM] Input inp-1: no response for req 6 within period
+# [001:151733 INPUTSIM] Input inp-1 got late response (150 ms)
+# [001:200455 INPUTSIM] Activating input inp-1 req 7, deadline at 1280 ms
+# [001:300135 INPUTSIM] Input inp-1: no response for req 7 within period
+# [001:352469 INPUTSIM] Input inp-1 got late response (151 ms)
+# [001:400766 INPUTSIM] Activating input inp-1 req 8, deadline at 1480 ms
+# [000:000000 CONTROLLER] Controller starting
+# [000:001131 CONTROLLER] START processing input inp-1 request 1 (C=150 ms)
+# [000:151237 CONTROLLER] END processing input inp-1 request 1
+# [000:200865 CONTROLLER] START processing input inp-1 request 2 (C=150 ms)
+# [000:350987 CONTROLLER] END processing input inp-1 request 2
+# [000:401155 CONTROLLER] START processing input inp-1 request 3 (C=150 ms)
+# [000:551268 CONTROLLER] END processing input inp-1 request 3
+# [000:600885 CONTROLLER] START processing input inp-1 request 4 (C=150 ms)
+# [000:750978 CONTROLLER] END processing input inp-1 request 4
+# [000:802088 CONTROLLER] START processing input inp-1 request 5 (C=150 ms)
+# [000:952217 CONTROLLER] END processing input inp-1 request 5
+# [001:001498 CONTROLLER] START processing input inp-1 request 6 (C=150 ms)
+# [001:151586 CONTROLLER] END processing input inp-1 request 6
+# [001:201494 CONTROLLER] START processing input inp-1 request 7 (C=150 ms)
+# [001:351610 CONTROLLER] END processing input inp-1 request 7
+# [001:401219 CONTROLLER] START processing input inp-1 request 8 (C=150 ms)
+# [001:499326 CONTROLLER] SIGINT: ending simulation
+# [001:499335 CONTROLLER] END processing input inp-1 request 8
+# [001:499336 CONTROLLER] Controller ending
+# 
+# 
+# Input inp-1 (t0=0, T=100, C=150, D=80):
+# nr_wakeups=15
+# nr_OK_responses=0
+# nr_LATE_responses=7
+# nr_NO_responses=7
+# response_avg=150
+# response_min=150
+# response_max=151
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Overall stats:
+# nr_wakeups=15
+# nr_OK_responses=0
+# nr_LATE_responses=7
+# nr_NO_responses=7
+# response_avg=150
+# response_min=150
+# response_max=151
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
