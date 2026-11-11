@@ -1,0 +1,1 @@
+riješeno sve na labosu

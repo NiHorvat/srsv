@@ -45,6 +45,7 @@ struct input_interface {
 	struct sim_input {
 		int request;	//1,2,3,... (0 initially)
 		int response;	//same as request after its "handled" (0 initially)
+        bool over_T;
 		
 		struct timespec t_req;	//timestamp when request is made - input simulator sets it
 		struct timespec t_started; //timestamp when request is started being handled - controller sets it

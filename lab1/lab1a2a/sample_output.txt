@@ -1,0 +1,407 @@
+$ make run
+cc -MMD -Wall -Wextra -Werror -DDEBUG=1    -c -o input_sim.o input_sim.c
+cc -MMD -Wall -Wextra -Werror -DDEBUG=1    -c -o interface.o interface.c
+cc -O input_sim.o interface.o -lpthread -o input_sim
+cc -MMD -Wall -Wextra -Werror -DDEBUG=1    -c -o controller.o controller.c
+cc -O controller.o interface.o -lpthread -o controller
+Starting input-simulator
+[000:000000 INPUTSIM] Input simulator ready
+Starting controller
+[000:000000 CONTROLLER] Controller ready
+[000:000000 CONTROLLER] Controller starting
+[000:000000 INPUTSIM] Input simulator starting
+[000:000024 INPUTSIM:133] Input: inp-1, next run:000:000000
+[000:000086 INPUTSIM:133] Input: inp-2, next run:000:000000
+[000:000145 INPUTSIM:133] Input: inp-3, next run:000:000000
+[000:000203 INPUTSIM:157] Activating input inp-1 req 1
+[000:000260 INPUTSIM:157] Activating input inp-2 req 1
+[000:000318 INPUTSIM:157] Activating input inp-3 req 1
+[000:001120 CONTROLLER:83] START processing input inp-1 request 1
+[000:051251 CONTROLLER:94] END processing input inp-1 request 1
+[000:051294 CONTROLLER:83] START processing input inp-2 request 1
+[000:051555 INPUTSIM:172] Input inp-1 got response on time (50)
+[000:100226 INPUTSIM:157] Activating input inp-1 req 2
+[000:101434 CONTROLLER:94] END processing input inp-2 request 1
+[000:101507 CONTROLLER:83] START processing input inp-3 request 1
+[000:102469 INPUTSIM:176] Input inp-2 got late response (101)
+[000:111641 CONTROLLER:94] END processing input inp-3 request 1
+[000:111712 CONTROLLER:83] START processing input inp-1 request 2
+[000:112525 INPUTSIM:176] Input inp-3 got late response (111)
+[000:150511 INPUTSIM:157] Activating input inp-2 req 2
+[000:161873 CONTROLLER:94] END processing input inp-1 request 2
+[000:161945 CONTROLLER:83] START processing input inp-2 request 2
+[000:162897 INPUTSIM:172] Input inp-1 got response on time (61)
+[000:200132 INPUTSIM:157] Activating input inp-1 req 3
+[000:200200 INPUTSIM:157] Activating input inp-3 req 2
+[000:212173 CONTROLLER:94] END processing input inp-2 request 2
+[000:212241 CONTROLLER:83] START processing input inp-3 request 2
+[000:212746 INPUTSIM:172] Input inp-2 got response on time (61)
+[000:222380 CONTROLLER:94] END processing input inp-3 request 2
+[000:222448 CONTROLLER:83] START processing input inp-1 request 3
+[000:222998 INPUTSIM:172] Input inp-3 got response on time (22)
+[000:272587 CONTROLLER:94] END processing input inp-1 request 3
+[000:272910 INPUTSIM:172] Input inp-1 got response on time (72)
+[000:301003 INPUTSIM:157] Activating input inp-1 req 4
+[000:301070 INPUTSIM:157] Activating input inp-2 req 3
+[000:301808 CONTROLLER:83] START processing input inp-1 request 4
+[000:352003 CONTROLLER:94] END processing input inp-1 request 4
+[000:352072 CONTROLLER:83] START processing input inp-2 request 3
+[000:352612 INPUTSIM:172] Input inp-1 got response on time (50)
+[000:401143 INPUTSIM:157] Activating input inp-1 req 5
+[000:401212 INPUTSIM:157] Activating input inp-3 req 3
+[000:402195 CONTROLLER:94] END processing input inp-2 request 3
+[000:402260 CONTROLLER:83] START processing input inp-3 request 3
+[000:402335 INPUTSIM:176] Input inp-2 got late response (101)
+[000:412398 CONTROLLER:94] END processing input inp-3 request 3
+[000:412465 CONTROLLER:83] START processing input inp-1 request 5
+[000:412511 INPUTSIM:172] Input inp-3 got response on time (11)
+[000:450864 INPUTSIM:157] Activating input inp-2 req 4
+[000:462596 CONTROLLER:94] END processing input inp-1 request 5
+[000:462662 CONTROLLER:83] START processing input inp-2 request 4
+[000:463376 INPUTSIM:172] Input inp-1 got response on time (61)
+[000:500748 INPUTSIM:157] Activating input inp-1 req 6
+[000:512801 CONTROLLER:94] END processing input inp-2 request 4
+[000:512871 CONTROLLER:83] START processing input inp-1 request 6
+[000:513216 INPUTSIM:172] Input inp-2 got response on time (61)
+[000:563003 CONTROLLER:94] END processing input inp-1 request 6
+[000:563888 INPUTSIM:172] Input inp-1 got response on time (62)
+[000:600126 INPUTSIM:157] Activating input inp-1 req 7
+[000:600314 INPUTSIM:157] Activating input inp-2 req 5
+[000:600373 INPUTSIM:157] Activating input inp-3 req 4
+[000:600516 CONTROLLER:83] START processing input inp-1 request 7
+[000:650716 CONTROLLER:94] END processing input inp-1 request 7
+[000:650785 CONTROLLER:83] START processing input inp-2 request 5
+[000:651003 INPUTSIM:172] Input inp-1 got response on time (50)
+[000:700743 INPUTSIM:157] Activating input inp-1 req 8
+[000:700930 CONTROLLER:94] END processing input inp-2 request 5
+[000:701000 CONTROLLER:83] START processing input inp-3 request 4
+[000:701925 INPUTSIM:172] Input inp-2 got response on time (100)
+[000:711209 CONTROLLER:94] END processing input inp-3 request 4
+[000:711276 CONTROLLER:83] START processing input inp-1 request 8
+[000:712150 INPUTSIM:176] Input inp-3 got late response (111)
+[000:750709 INPUTSIM:157] Activating input inp-2 req 6
+[000:761409 CONTROLLER:94] END processing input inp-1 request 8
+[000:761477 CONTROLLER:83] START processing input inp-2 request 6
+[000:762168 INPUTSIM:172] Input inp-1 got response on time (60)
+[000:800533 INPUTSIM:157] Activating input inp-1 req 9
+[000:800604 INPUTSIM:157] Activating input inp-3 req 5
+[000:811611 CONTROLLER:94] END processing input inp-2 request 6
+[000:811677 CONTROLLER:83] START processing input inp-3 request 5
+[000:811883 INPUTSIM:172] Input inp-2 got response on time (60)
+[000:821810 CONTROLLER:94] END processing input inp-3 request 5
+[000:821879 CONTROLLER:83] START processing input inp-1 request 9
+[000:822210 INPUTSIM:172] Input inp-3 got response on time (21)
+[000:871999 CONTROLLER:94] END processing input inp-1 request 9
+[000:872900 INPUTSIM:172] Input inp-1 got response on time (71)
+[000:900978 INPUTSIM:157] Activating input inp-1 req 10
+[000:901046 INPUTSIM:157] Activating input inp-2 req 7
+[000:901294 CONTROLLER:83] START processing input inp-1 request 10
+[000:951484 CONTROLLER:94] END processing input inp-1 request 10
+[000:951552 CONTROLLER:83] START processing input inp-2 request 7
+[000:951685 INPUTSIM:172] Input inp-1 got response on time (50)
+[001:000226 INPUTSIM:157] Activating input inp-1 req 11
+[001:000296 INPUTSIM:157] Activating input inp-3 req 6
+[001:001690 CONTROLLER:94] END processing input inp-2 request 7
+[001:001764 CONTROLLER:83] START processing input inp-3 request 6
+[001:002559 INPUTSIM:172] Input inp-2 got response on time (100)
+[001:011899 CONTROLLER:94] END processing input inp-3 request 6
+[001:011968 CONTROLLER:83] START processing input inp-1 request 11
+[001:012746 INPUTSIM:172] Input inp-3 got response on time (11)
+[001:050235 INPUTSIM:157] Activating input inp-2 req 8
+[001:062106 CONTROLLER:94] END processing input inp-1 request 11
+[001:062175 CONTROLLER:83] START processing input inp-2 request 8
+[001:062723 INPUTSIM:172] Input inp-1 got response on time (61)
+[001:101014 INPUTSIM:157] Activating input inp-1 req 12
+[001:112320 CONTROLLER:94] END processing input inp-2 request 8
+[001:112390 CONTROLLER:83] START processing input inp-1 request 12
+[001:112422 INPUTSIM:172] Input inp-2 got response on time (62)
+[001:162578 CONTROLLER:94] END processing input inp-1 request 12
+[001:163186 INPUTSIM:172] Input inp-1 got response on time (61)
+[001:200358 INPUTSIM:157] Activating input inp-1 req 13
+[001:200426 INPUTSIM:157] Activating input inp-2 req 9
+[001:200435 INPUTSIM:157] Activating input inp-3 req 7
+[001:200985 CONTROLLER:83] START processing input inp-1 request 13
+[001:251177 CONTROLLER:94] END processing input inp-1 request 13
+[001:251246 CONTROLLER:83] START processing input inp-2 request 9
+[001:251279 INPUTSIM:172] Input inp-1 got response on time (50)
+[001:300986 INPUTSIM:157] Activating input inp-1 req 14
+[001:301420 CONTROLLER:94] END processing input inp-2 request 9
+[001:301472 CONTROLLER:83] START processing input inp-3 request 7
+[001:302175 INPUTSIM:176] Input inp-2 got late response (101)
+[001:311585 CONTROLLER:94] END processing input inp-3 request 7
+[001:311629 CONTROLLER:83] START processing input inp-1 request 14
+[001:312374 INPUTSIM:176] Input inp-3 got late response (111)
+[001:350731 INPUTSIM:157] Activating input inp-2 req 10
+[001:361736 CONTROLLER:94] END processing input inp-1 request 14
+[001:361781 CONTROLLER:83] START processing input inp-2 request 10
+[001:361953 INPUTSIM:172] Input inp-1 got response on time (60)
+[001:400850 INPUTSIM:157] Activating input inp-1 req 15
+[001:400919 INPUTSIM:157] Activating input inp-3 req 8
+[001:411885 CONTROLLER:94] END processing input inp-2 request 10
+[001:411929 CONTROLLER:83] START processing input inp-3 request 8
+[001:412235 INPUTSIM:172] Input inp-2 got response on time (61)
+[001:422066 CONTROLLER:94] END processing input inp-3 request 8
+[001:422134 CONTROLLER:83] START processing input inp-1 request 15
+[001:422332 INPUTSIM:172] Input inp-3 got response on time (21)
+[001:472291 CONTROLLER:94] END processing input inp-1 request 15
+[001:472426 INPUTSIM:172] Input inp-1 got response on time (71)
+[001:500169 INPUTSIM:157] Activating input inp-1 req 16
+[001:500212 INPUTSIM:157] Activating input inp-2 req 11
+[001:501060 CONTROLLER:83] START processing input inp-1 request 16
+[001:551259 CONTROLLER:94] END processing input inp-1 request 16
+[001:551326 CONTROLLER:83] START processing input inp-2 request 11
+[001:551357 INPUTSIM:172] Input inp-1 got response on time (51)
+[001:601022 INPUTSIM:157] Activating input inp-1 req 17
+[001:601091 INPUTSIM:157] Activating input inp-3 req 9
+[001:601519 CONTROLLER:94] END processing input inp-2 request 11
+[001:601588 CONTROLLER:83] START processing input inp-3 request 9
+[001:602236 INPUTSIM:176] Input inp-2 got late response (101)
+[001:611735 CONTROLLER:94] END processing input inp-3 request 9
+[001:611807 CONTROLLER:83] START processing input inp-1 request 17
+[001:612417 INPUTSIM:172] Input inp-3 got response on time (10)
+[001:650731 INPUTSIM:157] Activating input inp-2 req 12
+[001:661945 CONTROLLER:94] END processing input inp-1 request 17
+[001:662014 CONTROLLER:83] START processing input inp-2 request 12
+[001:662203 INPUTSIM:172] Input inp-1 got response on time (60)
+[001:700552 INPUTSIM:157] Activating input inp-1 req 18
+[001:712158 CONTROLLER:94] END processing input inp-2 request 12
+[001:712228 CONTROLLER:83] START processing input inp-1 request 18
+[001:712999 INPUTSIM:172] Input inp-2 got response on time (61)
+[001:762365 CONTROLLER:94] END processing input inp-1 request 18
+[001:762684 INPUTSIM:172] Input inp-1 got response on time (61)
+[001:800101 INPUTSIM:157] Activating input inp-1 req 19
+[001:800168 INPUTSIM:157] Activating input inp-2 req 13
+[001:800177 INPUTSIM:157] Activating input inp-3 req 10
+[001:800688 CONTROLLER:83] START processing input inp-1 request 19
+[001:850927 CONTROLLER:94] END processing input inp-1 request 19
+[001:850994 CONTROLLER:83] START processing input inp-2 request 13
+[001:851024 INPUTSIM:172] Input inp-1 got response on time (50)
+[001:900744 INPUTSIM:157] Activating input inp-1 req 20
+[001:901177 CONTROLLER:94] END processing input inp-2 request 13
+[001:901244 CONTROLLER:83] START processing input inp-3 request 10
+[001:901942 INPUTSIM:176] Input inp-2 got late response (101)
+[001:911396 CONTROLLER:94] END processing input inp-3 request 10
+[001:911461 CONTROLLER:83] START processing input inp-1 request 20
+[001:912134 INPUTSIM:176] Input inp-3 got late response (111)
+[001:950559 INPUTSIM:157] Activating input inp-2 req 14
+[001:961607 CONTROLLER:94] END processing input inp-1 request 20
+[001:961672 CONTROLLER:83] START processing input inp-2 request 14
+[001:961868 INPUTSIM:172] Input inp-1 got response on time (60)
+[002:000317 INPUTSIM:157] Activating input inp-1 req 21
+[002:000385 INPUTSIM:157] Activating input inp-3 req 11
+[002:011820 CONTROLLER:94] END processing input inp-2 request 14
+[002:011889 CONTROLLER:83] START processing input inp-3 request 11
+[002:012757 INPUTSIM:172] Input inp-2 got response on time (61)
+[002:022029 CONTROLLER:94] END processing input inp-3 request 11
+[002:022099 CONTROLLER:83] START processing input inp-1 request 21
+[002:022978 INPUTSIM:172] Input inp-3 got response on time (21)
+[002:072208 CONTROLLER:94] END processing input inp-1 request 21
+[002:072353 INPUTSIM:172] Input inp-1 got response on time (71)
+[002:100047 INPUTSIM:157] Activating input inp-1 req 22
+[002:100090 INPUTSIM:157] Activating input inp-2 req 15
+[002:100206 CONTROLLER:83] START processing input inp-1 request 22
+[002:150382 CONTROLLER:94] END processing input inp-1 request 22
+[002:150429 CONTROLLER:83] START processing input inp-2 request 15
+[002:151065 INPUTSIM:172] Input inp-1 got response on time (50)
+[002:200538 CONTROLLER:94] END processing input inp-2 request 15
+[002:200966 INPUTSIM:157] Activating input inp-1 req 23
+[002:201007 INPUTSIM:172] Input inp-2 got response on time (100)
+[002:201013 INPUTSIM:157] Activating input inp-3 req 12
+[002:201691 CONTROLLER:83] START processing input inp-1 request 23
+[002:250068 INPUTSIM:157] Activating input inp-2 req 16
+[002:251852 CONTROLLER:94] END processing input inp-1 request 23
+[002:251920 CONTROLLER:83] START processing input inp-2 request 16
+[002:252325 INPUTSIM:172] Input inp-1 got response on time (50)
+[002:300590 INPUTSIM:157] Activating input inp-1 req 24
+[002:302162 CONTROLLER:94] END processing input inp-2 request 16
+[002:302233 CONTROLLER:83] START processing input inp-3 request 12
+[002:302850 INPUTSIM:172] Input inp-2 got response on time (52)
+[002:312366 CONTROLLER:94] END processing input inp-3 request 12
+[002:312435 CONTROLLER:83] START processing input inp-1 request 24
+[002:312977 INPUTSIM:176] Input inp-3 got late response (111)
+[002:362573 CONTROLLER:94] END processing input inp-1 request 24
+[002:363633 INPUTSIM:172] Input inp-1 got response on time (61)
+[002:400743 INPUTSIM:157] Activating input inp-1 req 25
+[002:400813 INPUTSIM:157] Activating input inp-2 req 17
+[002:400822 INPUTSIM:157] Activating input inp-3 req 13
+[002:400911 CONTROLLER:83] START processing input inp-1 request 25
+[002:451090 CONTROLLER:94] END processing input inp-1 request 25
+[002:451135 CONTROLLER:83] START processing input inp-2 request 17
+[002:451642 INPUTSIM:172] Input inp-1 got response on time (50)
+[002:500487 INPUTSIM:157] Activating input inp-1 req 26
+[002:501249 CONTROLLER:94] END processing input inp-2 request 17
+[002:501288 CONTROLLER:83] START processing input inp-3 request 13
+[002:501659 INPUTSIM:172] Input inp-2 got response on time (100)
+[002:511414 CONTROLLER:94] END processing input inp-3 request 13
+[002:511484 CONTROLLER:83] START processing input inp-1 request 26
+[002:511863 INPUTSIM:176] Input inp-3 got late response (110)
+[002:550938 INPUTSIM:157] Activating input inp-2 req 18
+[002:561607 CONTROLLER:94] END processing input inp-1 request 26
+[002:561674 CONTROLLER:83] START processing input inp-2 request 18
+[002:562082 INPUTSIM:172] Input inp-1 got response on time (61)
+[002:600998 INPUTSIM:157] Activating input inp-1 req 27
+[002:601068 INPUTSIM:157] Activating input inp-3 req 14
+[002:611777 CONTROLLER:94] END processing input inp-2 request 18
+[002:611821 CONTROLLER:83] START processing input inp-3 request 14
+[002:612221 INPUTSIM:172] Input inp-2 got response on time (60)
+[002:621925 CONTROLLER:94] END processing input inp-3 request 14
+[002:621968 CONTROLLER:83] START processing input inp-1 request 27
+[002:622305 INPUTSIM:172] Input inp-3 got response on time (20)
+[002:672074 CONTROLLER:94] END processing input inp-1 request 27
+[002:672595 INPUTSIM:172] Input inp-1 got response on time (71)
+[002:700746 INPUTSIM:157] Activating input inp-1 req 28
+[002:700811 INPUTSIM:157] Activating input inp-2 req 19
+[002:701196 CONTROLLER:83] START processing input inp-1 request 28
+[002:751397 CONTROLLER:94] END processing input inp-1 request 28
+[002:751477 CONTROLLER:83] START processing input inp-2 request 19
+[002:751522 INPUTSIM:172] Input inp-1 got response on time (50)
+[002:800865 INPUTSIM:157] Activating input inp-1 req 29
+[002:800936 INPUTSIM:157] Activating input inp-3 req 15
+[002:801613 CONTROLLER:94] END processing input inp-2 request 19
+[002:801682 CONTROLLER:83] START processing input inp-3 request 15
+[002:802133 INPUTSIM:172] Input inp-2 got response on time (100)
+[002:811790 CONTROLLER:94] END processing input inp-3 request 15
+[002:811834 CONTROLLER:83] START processing input inp-1 request 29
+[002:812220 INPUTSIM:172] Input inp-3 got response on time (10)
+[002:850486 INPUTSIM:157] Activating input inp-2 req 20
+[002:861946 CONTROLLER:94] END processing input inp-1 request 29
+[002:861990 CONTROLLER:83] START processing input inp-2 request 20
+[002:862843 INPUTSIM:172] Input inp-1 got response on time (61)
+[002:901064 INPUTSIM:157] Activating input inp-1 req 30
+[002:912113 CONTROLLER:94] END processing input inp-2 request 20
+[002:912157 CONTROLLER:83] START processing input inp-1 request 30
+[002:912435 INPUTSIM:172] Input inp-2 got response on time (61)
+[002:962276 CONTROLLER:94] END processing input inp-1 request 30
+[002:962966 INPUTSIM:172] Input inp-1 got response on time (61)
+[003:000288 INPUTSIM:157] Activating input inp-1 req 31
+[003:000355 INPUTSIM:157] Activating input inp-2 req 21
+[003:000364 INPUTSIM:157] Activating input inp-3 req 16
+[003:000445 CONTROLLER:83] START processing input inp-1 request 31
+[003:050632 CONTROLLER:94] END processing input inp-1 request 31
+[003:050700 CONTROLLER:83] START processing input inp-2 request 21
+[003:050871 INPUTSIM:172] Input inp-1 got response on time (50)
+[003:100513 INPUTSIM:157] Activating input inp-1 req 32
+[003:100845 CONTROLLER:94] END processing input inp-2 request 21
+[003:100914 CONTROLLER:83] START processing input inp-3 request 16
+[003:101693 INPUTSIM:172] Input inp-2 got response on time (100)
+[003:111069 CONTROLLER:94] END processing input inp-3 request 16
+[003:111138 CONTROLLER:83] START processing input inp-1 request 32
+[003:111872 INPUTSIM:176] Input inp-3 got late response (110)
+[003:150258 INPUTSIM:157] Activating input inp-2 req 22
+[003:161265 CONTROLLER:94] END processing input inp-1 request 32
+[003:161335 CONTROLLER:83] START processing input inp-2 request 22
+[003:161636 INPUTSIM:172] Input inp-1 got response on time (60)
+[003:201142 INPUTSIM:157] Activating input inp-1 req 33
+[003:201209 INPUTSIM:157] Activating input inp-3 req 17
+[003:211493 CONTROLLER:94] END processing input inp-2 request 22
+[003:211561 CONTROLLER:83] START processing input inp-3 request 17
+[003:212457 INPUTSIM:172] Input inp-2 got response on time (61)
+[003:221710 CONTROLLER:94] END processing input inp-3 request 17
+[003:221783 CONTROLLER:83] START processing input inp-1 request 33
+[003:222663 INPUTSIM:172] Input inp-3 got response on time (20)
+[003:271903 CONTROLLER:94] END processing input inp-1 request 33
+[003:272301 INPUTSIM:172] Input inp-1 got response on time (70)
+[003:300507 INPUTSIM:157] Activating input inp-1 req 34
+[003:300576 INPUTSIM:157] Activating input inp-2 req 23
+[003:301188 CONTROLLER:83] START processing input inp-1 request 34
+[003:351377 CONTROLLER:94] END processing input inp-1 request 34
+[003:351445 CONTROLLER:83] START processing input inp-2 request 23
+[003:352391 INPUTSIM:172] Input inp-1 got response on time (50)
+[003:400945 INPUTSIM:157] Activating input inp-1 req 35
+[003:401012 INPUTSIM:157] Activating input inp-3 req 18
+[003:401592 CONTROLLER:94] END processing input inp-2 request 23
+[003:401659 CONTROLLER:83] START processing input inp-3 request 18
+[003:402138 INPUTSIM:176] Input inp-2 got late response (101)
+[003:411794 CONTROLLER:94] END processing input inp-3 request 18
+[003:411863 CONTROLLER:83] START processing input inp-1 request 35
+[003:412358 INPUTSIM:172] Input inp-3 got response on time (10)
+[003:450665 INPUTSIM:157] Activating input inp-2 req 24
+[003:461998 CONTROLLER:94] END processing input inp-1 request 35
+[003:462070 CONTROLLER:83] START processing input inp-2 request 24
+[003:462101 INPUTSIM:172] Input inp-1 got response on time (61)
+[003:500571 INPUTSIM:157] Activating input inp-1 req 36
+[003:512271 CONTROLLER:94] END processing input inp-2 request 24
+[003:512340 CONTROLLER:83] START processing input inp-1 request 36
+[003:513020 INPUTSIM:172] Input inp-2 got response on time (61)
+[003:562475 CONTROLLER:94] END processing input inp-1 request 36
+[003:562711 INPUTSIM:172] Input inp-1 got response on time (61)
+[003:600116 INPUTSIM:157] Activating input inp-1 req 37
+[003:600184 INPUTSIM:157] Activating input inp-2 req 25
+[003:600193 INPUTSIM:157] Activating input inp-3 req 19
+[003:600796 CONTROLLER:83] START processing input inp-1 request 37
+[003:650975 CONTROLLER:94] END processing input inp-1 request 37
+[003:651043 CONTROLLER:83] START processing input inp-2 request 25
+[003:651074 INPUTSIM:172] Input inp-1 got response on time (50)
+[003:700744 INPUTSIM:157] Activating input inp-1 req 38
+[003:701246 CONTROLLER:94] END processing input inp-2 request 25
+[003:701315 CONTROLLER:83] START processing input inp-3 request 19
+[003:701940 INPUTSIM:176] Input inp-2 got late response (101)
+[003:711457 CONTROLLER:94] END processing input inp-3 request 19
+[003:711522 CONTROLLER:83] START processing input inp-1 request 38
+[003:712165 INPUTSIM:176] Input inp-3 got late response (111)
+[003:750647 INPUTSIM:157] Activating input inp-2 req 26
+[003:761666 CONTROLLER:94] END processing input inp-1 request 38
+[003:761734 CONTROLLER:83] START processing input inp-2 request 26
+[003:761989 INPUTSIM:172] Input inp-1 got response on time (60)
+[003:800439 INPUTSIM:157] Activating input inp-1 req 39
+[003:800507 INPUTSIM:157] Activating input inp-3 req 20
+[003:811863 CONTROLLER:94] END processing input inp-2 request 26
+[003:811931 CONTROLLER:83] START processing input inp-3 request 20
+[003:812941 INPUTSIM:172] Input inp-2 got response on time (61)
+[003:822079 CONTROLLER:94] END processing input inp-3 request 20
+[003:822151 CONTROLLER:83] START processing input inp-1 request 39
+[003:823131 INPUTSIM:172] Input inp-3 got response on time (21)
+[003:872282 CONTROLLER:94] END processing input inp-1 request 39
+[003:872751 INPUTSIM:172] Input inp-1 got response on time (71)
+^C[003:884948 CONTROLLER] SIGINT: ending simulation
+[003:885163 CONTROLLER] Controller ending
+[003:884935 INPUTSIM] SIGINT: ending simulation
+
+Input inp-1 (t0=0, T=100, C=50, D=100):
+nr_wakeups=39
+nr_OK_responses=39
+nr_LATE_responses=0
+nr_NO_responses=0
+response_avg=58
+response_min=50
+response_max=72
+reaction_avg=8
+reaction_min=0
+reaction_max=22
+
+Input inp-2 (t0=0, T=150, C=50, D=100):
+nr_wakeups=26
+nr_OK_responses=19
+nr_LATE_responses=7
+nr_NO_responses=0
+response_avg=80
+response_min=52
+
+response_max=101
+reaction_avg=30
+reaction_min=1
+reaction_max=51
+
+Input inp-3 (t0=0, T=200, C=10, D=100):
+nr_wakeups=20
+nr_OK_responses=12
+nr_LATE_responses=8
+nr_NO_responses=0
+response_avg=54
+response_min=10
+response_max=111
+reaction_avg=44
+reaction_min=0
+reaction_max=101
+
+Overall stats:
+nr_wakeups=85
+nr_OK_responses=70
+nr_LATE_responses=15
+nr_NO_responses=0
+response_avg=64
+response_min=10
+response_max=111
+reaction_avg=23
+reaction_min=0
+reaction_max=101

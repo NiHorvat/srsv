@@ -1,0 +1,208 @@
+# line that start with character # is a comment, ignore it in parsing
+# each line should contain one input in format: id prio first T C D
+# i.e.: input-name priority first-occurrence-in-ms period comp-time relative-deadline
+#
+# B6: vise zadataka, neki ne stignu do T
+# (U = 0.5 + 0.4 + 0.27 = 1.17 > 1, sustav je preopterecen)
+#id	prio	first	T	C	D
+inp-1	1	0	100	50	80
+inp-2	1	0	100	40	80
+inp-3	1	0	150	40	100
+
+# ===== rezultat simulacije =====
+# [000:000000 INPUTSIM] Input simulator ready
+# [000:000000 INPUTSIM] Input simulator starting
+# [000:000007 INPUTSIM] Activating input inp-1 req 1, deadline at 80 ms
+# [000:000008 INPUTSIM] Activating input inp-2 req 1, deadline at 80 ms
+# [000:000009 INPUTSIM] Activating input inp-3 req 1, deadline at 100 ms
+# [000:051263 INPUTSIM] Input inp-1 got response on time (51 ms)
+# [000:092256 INPUTSIM] Input inp-2 got late response (91 ms)
+# [000:100018 INPUTSIM] Activating input inp-1 req 2, deadline at 180 ms
+# [000:100022 INPUTSIM] Activating input inp-2 req 2, deadline at 180 ms
+# [000:132302 INPUTSIM] Input inp-3 got late response (131 ms)
+# [000:151113 INPUTSIM] Activating input inp-3 req 2, deadline at 250 ms
+# [000:182366 INPUTSIM] Input inp-1 got late response (81 ms)
+# [000:200321 INPUTSIM] Activating input inp-1 req 3, deadline at 280 ms
+# [000:200325 INPUTSIM] Input inp-2: no response for req 2 within period
+# [000:222494 INPUTSIM] Input inp-2 got late response (121 ms)
+# [000:262604 INPUTSIM] Input inp-3 got late response (110 ms)
+# [000:300606 INPUTSIM] Input inp-1: no response for req 3 within period
+# [000:300607 INPUTSIM] Activating input inp-2 req 3, deadline at 380 ms
+# [000:300608 INPUTSIM] Activating input inp-3 req 3, deadline at 400 ms
+# [000:312888 INPUTSIM] Input inp-1 got late response (111 ms)
+# [000:353050 INPUTSIM] Input inp-2 got response on time (51 ms)
+# [000:392994 INPUTSIM] Input inp-3 got response on time (91 ms)
+# [000:400712 INPUTSIM] Activating input inp-1 req 4, deadline at 480 ms
+# [000:400717 INPUTSIM] Activating input inp-2 req 4, deadline at 480 ms
+# [000:450855 INPUTSIM] Activating input inp-3 req 4, deadline at 550 ms
+# [000:452052 INPUTSIM] Input inp-1 got response on time (50 ms)
+# [000:491315 INPUTSIM] Input inp-2 got late response (90 ms)
+# [000:500161 INPUTSIM] Activating input inp-1 req 5, deadline at 580 ms
+# [000:500165 INPUTSIM] Activating input inp-2 req 5, deadline at 580 ms
+# [000:531384 INPUTSIM] Input inp-3 got response on time (80 ms)
+# [000:581625 INPUTSIM] Input inp-1 got late response (81 ms)
+# [000:600202 INPUTSIM] Activating input inp-1 req 6, deadline at 680 ms
+# [000:600207 INPUTSIM] Input inp-2: no response for req 5 within period
+# [000:600208 INPUTSIM] Activating input inp-3 req 5, deadline at 700 ms
+# [000:622375 INPUTSIM] Input inp-2 got late response (121 ms)
+# [000:662636 INPUTSIM] Input inp-3 got response on time (61 ms)
+# [000:700605 INPUTSIM] Input inp-1: no response for req 6 within period
+# [000:700606 INPUTSIM] Activating input inp-2 req 6, deadline at 780 ms
+# [000:711836 INPUTSIM] Input inp-1 got late response (111 ms)
+# [000:750775 INPUTSIM] Activating input inp-3 req 6, deadline at 850 ms
+# [000:751878 INPUTSIM] Input inp-2 got response on time (51 ms)
+# [000:792148 INPUTSIM] Input inp-3 got response on time (41 ms)
+# [000:800902 INPUTSIM] Activating input inp-1 req 7, deadline at 880 ms
+# [000:800906 INPUTSIM] Activating input inp-2 req 7, deadline at 880 ms
+# [000:852067 INPUTSIM] Input inp-1 got response on time (51 ms)
+# [000:893188 INPUTSIM] Input inp-2 got late response (91 ms)
+# [000:900975 INPUTSIM] Activating input inp-1 req 8, deadline at 980 ms
+# [000:900979 INPUTSIM] Activating input inp-2 req 8, deadline at 980 ms
+# [000:900980 INPUTSIM] Activating input inp-3 req 7, deadline at 1000 ms
+# [000:952525 INPUTSIM] Input inp-1 got response on time (51 ms)
+# [000:992707 INPUTSIM] Input inp-2 got late response (91 ms)
+# [001:000484 INPUTSIM] Activating input inp-1 req 9, deadline at 1080 ms
+# [001:000488 INPUTSIM] Activating input inp-2 req 9, deadline at 1080 ms
+# [001:032836 INPUTSIM] Input inp-3 got late response (131 ms)
+# [001:050680 INPUTSIM] Activating input inp-3 req 8, deadline at 1150 ms
+# [001:083179 INPUTSIM] Input inp-1 got late response (82 ms)
+# [001:101001 INPUTSIM] Activating input inp-1 req 10, deadline at 1180 ms
+# [001:101006 INPUTSIM] Input inp-2: no response for req 9 within period
+# [001:123066 INPUTSIM] Input inp-2 got late response (122 ms)
+# [001:163068 INPUTSIM] Input inp-3 got late response (112 ms)
+# [001:200621 INPUTSIM] Input inp-1: no response for req 10 within period
+# [001:200623 INPUTSIM] Activating input inp-2 req 10, deadline at 1280 ms
+# [001:200623 INPUTSIM] Activating input inp-3 req 9, deadline at 1300 ms
+# [001:214127 INPUTSIM] Input inp-1 got late response (111 ms)
+# [001:254070 INPUTSIM] Input inp-2 got response on time (52 ms)
+# [001:293500 INPUTSIM] Input inp-3 got response on time (92 ms)
+# [001:300255 INPUTSIM] Activating input inp-1 req 11, deadline at 1380 ms
+# [001:300259 INPUTSIM] Activating input inp-2 req 11, deadline at 1380 ms
+# [001:327922 [000:000000 CONTROLLER] Controller ready
+# [000:000000 CONTROLLER] Controller starting
+# [000:001101 CONTROLLER] START processing input inp-1 request 1 (C=50 ms)
+# [000:051211 CONTROLLER] END processing input inp-1 request 1
+# [000:051216 CONTROLLER] START processing input inp-2 request 1 (C=40 ms)
+# [000:091323 CONTROLLER] END processing input inp-2 request 1
+# [000:091328 CONTROLLER] START processing input inp-3 request 1 (C=40 ms)
+# [000:131454 CONTROLLER] END processing input inp-3 request 1
+# [000:131459 CONTROLLER] START processing input inp-1 request 2 (C=50 ms)
+# [000:181567 CONTROLLER] END processing input inp-1 request 2
+# [000:181572 CONTROLLER] START processing input inp-2 request 2 (C=40 ms)
+# [000:221679 CONTROLLER] END processing input inp-2 request 2
+# [000:221683 CONTROLLER] START processing input inp-3 request 2 (C=40 ms)
+# [000:261786 CONTROLLER] END processing input inp-3 request 2
+# [000:261790 CONTROLLER] START processing input inp-1 request 3 (C=50 ms)
+# [000:311895 CONTROLLER] END processing input inp-1 request 3
+# [000:311900 CONTROLLER] START processing input inp-2 request 3 (C=40 ms)
+# [000:352012 CONTROLLER] END processing input inp-2 request 3
+# [000:352017 CONTROLLER] START processing input inp-3 request 3 (C=40 ms)
+# [000:392126 CONTROLLER] END processing input inp-3 request 3
+# [000:400945 CONTROLLER] START processing input inp-1 request 4 (C=50 ms)
+# [000:451058 CONTROLLER] END processing input inp-1 request 4
+# [000:451063 CONTROLLER] START processing input inp-2 request 4 (C=40 ms)
+# [000:491174 CONTROLLER] END processing input inp-2 request 4
+# [000:491181 CONTROLLER] START processing input inp-3 request 4 (C=40 ms)
+# [000:531366 CONTROLLER] END processing input inp-3 request 4
+# [000:531371 CONTROLLER] START processing input inp-1 request 5 (C=50 ms)
+# [000:581474 CONTROLLER] END processing input inp-1 request 5
+# [000:581479 CONTROLLER] START processing input inp-2 request 5 (C=40 ms)
+# [000:621592 CONTROLLER] END processing input inp-2 request 5
+# [000:621596 CONTROLLER] START processing input inp-3 request 5 (C=40 ms)
+# [000:661703 CONTROLLER] END processing input inp-3 request 5
+# [000:661707 CONTROLLER] START processing input inp-1 request 6 (C=50 ms)
+# [000:711788 CONTROLLER] END processing input inp-1 request 6
+# [000:711792 CONTROLLER] START processing input inp-2 request 6 (C=40 ms)
+# [000:751902 CONTROLLER] END processing input inp-2 request 6
+# [000:751906 CONTROLLER] START processing input inp-3 request 6 (C=40 ms)
+# [000:792013 CONTROLLER] END processing input inp-3 request 6
+# [000:801927 CONTROLLER] START processing input inp-1 request 7 (C=50 ms)
+# [000:852042 CONTROLLER] END processing input inp-1 request 7
+# [000:852047 CONTROLLER] START processing input inp-2 request 7 (C=40 ms)
+# [000:892154 CONTROLLER] END processing input inp-2 request 7
+# [000:902142 CONTROLLER] START processing input inp-1 request 8 (C=50 ms)
+# [000:952258 CONTROLLER] END processing input inp-1 request 8
+# [000:952263 CONTROLLER] START processing input inp-2 request 8 (C=40 ms)
+# [000:992382 CONTROLLER] END processing input inp-2 request 8
+# [000:992386 CONTROLLER] START processing input inp-3 request 7 (C=40 ms)
+# [001:032462 CONTROLLER] END processing input inp-3 request 7
+# [001:032467 CONTROLLER] START processing input inp-1 request 9 (C=50 ms)
+# [001:082580 CONTROLLER] END processing input inp-1 request 9
+# [001:082584 CONTROLLER] START processing input inp-2 request 9 (C=40 ms)
+# [001:122697 CONTROLLER] END processing input inp-2 request 9
+# [001:122703 CONTROLLER] START processing input inp-3 request 8 (C=40 ms)
+# [001:162820 CONTROLLER] END processing input inp-3 request 8
+# [001:162825 CONTROLLER] START processing input inp-1 request 10 (C=50 ms)
+# [001:213001 CONTROLLER] END processing input inp-1 request 10
+# [001:213006 CONTROLLER] START processing input inp-2 request 10 (C=40 ms)
+# [001:253113 CONTROLLER] END processing input inp-2 request 10
+# [001:253117 CONTROLLER] START processing input inp-3 request 9 (C=40 ms)
+# [001:293225 CONTROLLER] END processing input inp-3 request 9
+# [001:300936 CONTROLLER] START processing input inp-1 request 11 (C=50 ms)
+# [001:351031 INPUTSIM] Input inp-1 got response on time (50 ms)
+# [001:351033 INPUTSIM] Activating input inp-3 req 10, deadline at 1450 ms
+# [001:391968 INPUTSIM] Input inp-2 got late response (90 ms)
+# [001:400780 INPUTSIM] Activating input inp-1 req 12, deadline at 1480 ms
+# [001:400786 INPUTSIM] Activating input inp-2 req 12, deadline at 1480 ms
+# [001:431845 INPUTSIM] Input inp-3 got response on time (80 ms)
+# [001:455359 INPUTSIM] Input inp-1: in tp-1 request 11
+# [001:351087 CONTROLLER] START processing input inp-2 request 11 (C=40 ms)
+# [001:391204 CONTROLLER] END processing input inp-2 request 11
+# [001:391209 CONTROLLER] START processing input inp-3 request 10 (C=40 ms)
+# [001:431401 CONTROLLER] END processing input inp-3 request 10
+# [001:431432 CONTROLLER] START processing input inp-1 request 12 (C=50 ms)
+# [001:481526 CONTROLLER] END processing input inp-1 request 12
+# [001:481532 CONTROLLER] START processing input inp-2 request 12 (C=40 ms)
+# [001:499305 CONTROLLER] SIGINT: ending simulation
+# [001:499315 CONTROLLER] END processing input inp-2 request 12
+# [001:499316 CONTROLLER] Controller ending
+# he works
+# [001:482006 INPUTSIM] Input inp-1 got late response (80 ms)
+# 
+# Input inp-1 (t0=0, T=100, C=50, D=80):
+# nr_wakeups=15
+# nr_OK_responses=5
+# nr_LATE_responses=7
+# nr_NO_responses=3
+# response_avg=75
+# response_min=50
+# response_max=111
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Input inp-2 (t0=0, T=100, C=40, D=80):
+# nr_wakeups=15
+# nr_OK_responses=3
+# nr_LATE_responses=8
+# nr_NO_responses=3
+# response_avg=88
+# response_min=51
+# response_max=122
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Input inp-3 (t0=0, T=150, C=40, D=100):
+# nr_wakeups=10
+# nr_OK_responses=6
+# nr_LATE_responses=4
+# nr_NO_responses=0
+# response_avg=92
+# response_min=41
+# response_max=131
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0
+# 
+# Overall stats:
+# nr_wakeups=40
+# nr_OK_responses=14
+# nr_LATE_responses=19
+# nr_NO_responses=6
+# response_avg=85
+# response_min=41
+# response_max=131
+# reaction_avg=0
+# reaction_min=0
+# reaction_max=0

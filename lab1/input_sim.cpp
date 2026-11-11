@@ -45,6 +45,7 @@ static struct input_interface *ii;
 static struct input_data *id;
 struct timespec t0; //PRINTF
 
+
 static void sigint_handler(int sig __attribute__((unused)))
 {
 	PRINTF("SIGINT: ending simulation\n");
@@ -189,7 +190,7 @@ int main()
 
 					auto t_reaction = ii->input[i].t_started;
 
-					TIMESPEC_SUB(t_reaction, ii->input[i].t_started);
+					TIMESPEC_SUB(t_reaction, ii->input[i].t_req);
 					const auto t_reaction_ms = TIMESPEC_TO_MS(t_reaction);
 
 					
@@ -202,6 +203,17 @@ int main()
 					SET_MIN(id[i].reaction_min,t_reaction_ms);
 					SET_MAX(id[i].reaction_max,t_reaction_ms);
 					
+
+					// hack/patch fix
+					if(ii->input[i].over_T == true){
+						ii->input[i].over_T = false; // reset the over T flag
+						id[i].nr_NO_responses++;
+						id[i].state = INACTIVE;
+
+						continue;
+
+					}
+
 					if(on_D){
 						id[i].nr_OK_responses++;
 						PRINTF("Input %s got response on time (%ld ms)\n", inputs[i].name, (long) t_response_ms);
@@ -230,6 +242,7 @@ int main()
 						PRINTF("Input %s: no response for req %d within period\n",
 							inputs[i].name, request);
 						// ostajemoi aktivni i dalje cekamo response
+						ii->input[i].over_T=true;
 
 					}
 				}

@@ -1,0 +1,17 @@
+# line that start with character # is a comment, ignore it in parsing
+# each line should contain one input in format: id prio first T C D
+# i.e.: input-name priority first-occurrence-in-ms period comp-time relative-deadline
+#
+# example inputs (1)
+#id	prio	first	T	C	D
+inp-1	1	0	100	50	100
+inp-2	1	0	150	50	100
+inp-3	1	0	200	10	100
+#inp-4	1	0	100	50	100
+
+# example inputs (2)
+#inp-1	5	20	100	10	50
+#inp-2	6	30	300	20	100
+#inp-3	1	80	200	30	100
+#inp-23	4	70	500	50	50
+#inp-11	7	50	900	15	100
